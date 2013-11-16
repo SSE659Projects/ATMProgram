@@ -1,0 +1,9 @@
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.dll
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.pdb
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.exe
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\nunit.framework.dll
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.pdb
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\nunit.framework.xml
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\obj\Debug\BankingATM.tests.dll
+C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\obj\Debug\BankingATM.tests.pdb

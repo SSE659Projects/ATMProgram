@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1041]C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.dll</TopNode>
+  <SelectedNode>[0-1026]BankingATM.tests.BankAccountTests.TestLoginAccountFromDatabase("445566","5555")</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1041]C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1042]BankingATM" Expanded="true" />
+    <Node UniqueName="[0-1043]BankingATM.tests" Expanded="true" />
+    <Node UniqueName="[0-1000]BankingATM.tests.BankAccountTests" Expanded="true" />
+    <Node UniqueName="[0-1009]BankingATM.tests.BankAccountTests.IsAccountNumberValid" Expanded="true" />
+    <Node UniqueName="[0-1014]BankingATM.tests.BankAccountTests.IsPinNumberValid" Expanded="true" />
+    <Node UniqueName="[0-1025]BankingATM.tests.BankAccountTests.TestLoginAccountFromDatabase" Expanded="true" />
+    <Node UniqueName="[0-1033]BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager" Expanded="true" />
+    <Node UniqueName="[0-1003]BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund" Expanded="true" />
+  </Nodes>
+</VisualState>

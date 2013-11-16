@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.dll" total="35" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-09-17" time="13:47:54">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.1008" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Windows\system32" machine-name="TDL-L131" user="Bounsysavanh.Vongsam" user-domain="TDL-WSN" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\bounsysavanh.vongsam\Documents\Visual Studio 2010\Projects\CSharp\BankingATM\BankingATM.tests\bin\Debug\BankingATM.tests.dll" executed="True" result="Success" success="True" time="0.100" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="BankingATM" executed="True" result="Success" success="True" time="0.100" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="0.100" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="BankAccountTests" executed="True" result="Success" success="True" time="0.100" asserts="0">
+                <results>
+                  <test-suite type="ParameterizedTest" name="IsAccountNumberValid" executed="True" result="Success" success="True" time="0.040" asserts="0">
+                    <results>
+                      <test-case name="BankingATM.tests.BankAccountTests.IsAccountNumberValid(&quot;12345&quot;)" executed="True" result="Success" success="True" time="0.020" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.IsAccountNumberValid(&quot;12&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.IsAccountNumberValid(&quot;123456&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.IsAccountNumberValid(&quot;1234567&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="ParameterizedTest" name="IsPinNumberValid" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                    <results>
+                      <test-case name="BankingATM.tests.BankAccountTests.IsPinNumberValid(&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.IsPinNumberValid(&quot;123&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.IsPinNumberValid(&quot;12345&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-case name="BankingATM.tests.BankAccountTests.TestAddAccountByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestAddAccountToDatabase" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestAddDuplicateAccountsToDatabase" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestCreateBankAccountWithAccountNumber" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestCreateBankAccountWithInitialBalance" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestCreateBankAccountWithPinNumber" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestDeposit" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestDepositByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestLoginAccountByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-suite type="ParameterizedTest" name="TestLoginAccountFromDatabase" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="BankingATM.tests.BankAccountTests.TestLoginAccountFromDatabase(&quot;445566&quot;,&quot;5555&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestLoginAccountFromDatabase(&quot;112233&quot;,&quot;1234&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-case name="BankingATM.tests.BankAccountTests.TestRemoveAccountByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestRemoveAccountFromDatabase" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestRemoveNonExistenceAccountFromDatabase" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestUnsuccessfulLoginAccountFromDatabase" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-suite type="ParameterizedTest" name="TestValidTransactionAmountCheckByManager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager(&quot;1&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager(&quot;0&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager(&quot;50&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager(&quot;-50&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestValidTransactionAmountCheckByManager(&quot;-1&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-case name="BankingATM.tests.BankAccountTests.TestViewAccountBalanceByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestWithdraw" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawByManager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-suite type="ParameterizedTest" name="TestWithdrawInsufficientFund" executed="True" result="Success" success="True" time="0.010" asserts="0">
+                    <results>
+                      <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund(99)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund(200)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund(100)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund(50)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="BankingATM.tests.BankAccountTests.TestWithdrawInsufficientFund(101)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
