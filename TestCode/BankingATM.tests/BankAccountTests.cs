@@ -267,6 +267,64 @@ namespace BankingATM.tests
             //accountManager.Login("789456", "7777");
             return accountManager.AccountExists(sAccountNumber);
         }
+
+        // Testing for valid transfer amount when current balance is not a factor
+        //[TestCase("500", Result = false)]
+        [TestCase("201", Result = false)]
+        [TestCase("200", Result = true)]
+        [TestCase("199", Result = true)]
+        //[TestCase("100", Result = true)]
+        [TestCase("1", Result = true)]
+        [TestCase("0", Result = true)]
+        [TestCase("-1", Result = false)]
+        //[TestCase("-500", Result = false)]
+        //[TestCase("abc", Result = false)]   // Garbage Testing
+        //[TestCase("", Result = false)]      // Null Testing
+        public bool TestValidTransferAmountByManager(string sAmount)
+        {
+            int iAmount = 0;
+            BankAccount bankAccount = new BankAccount("789456", "7777", 700);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount);
+            if (accountManager.Login("789456", "7777"))
+                return accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_TRANSFER, sAmount, out iAmount);
+            else
+                return false;
+        }
+
+        // Testing for valid transfer amount when current balance is a factor
+        //[TestCase("201", Result = false)]
+        [TestCase("101", Result = false)]
+        [TestCase("100", Result = true)]
+        [TestCase("99", Result = true)]
+        public bool TestValidTransferAmountDependentCurrentBalanceByManager(string sAmount)
+        {
+            int iAmount = 0;
+            BankAccount bankAccount = new BankAccount("789456", "7777", 100);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount);
+            if (accountManager.Login("789456", "7777"))
+                return accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_TRANSFER, sAmount, out iAmount);
+            else
+                return false;
+        }
+
+        [Test]
+        public void TestTransferByManager()
+        {
+            int iAmount = 50;
+            BankAccount bankAccount1 = new BankAccount("789456", "7777", 100);
+            BankAccount bankAccount2 = new BankAccount("012456", "4444", 200);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount1);
+            accountManager.AddBankAccount(bankAccount2);
+            if (accountManager.Login("789456", "7777"))
+            {
+                accountManager.Transfer(bankAccount2.AccountNumber, iAmount);
+            }
+            Assert.AreEqual(50, bankAccount1.Balance);  // Logged in account balance
+            Assert.AreEqual(250, bankAccount2.Balance); // Target account balance
+        }
          
     } // end BankAccountTests
 }

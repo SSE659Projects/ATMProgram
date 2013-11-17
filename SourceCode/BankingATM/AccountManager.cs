@@ -11,13 +11,13 @@ namespace BankingATM
         public enum ETransactionType
         {
             E_DEPOSIT,
-            E_WITHDRAW
-            //E_TRANSFER
+            E_WITHDRAW,
+            E_TRANSFER
         };
 
         public const int DEPOSIT_LIMIT = 1000;
         public const int WITHDRAW_LIMIT = 500;
-        //public const int TRANSFER_LIMIT = 200;
+        public const int TRANSFER_LIMIT = 200;
         const int ACCOUNT_NUMBER_LENGTH = 6;
         const int PIN_NUMBER_LENGTH = 4;
 
@@ -131,16 +131,17 @@ namespace BankingATM
                 case ETransactionType.E_WITHDRAW:
                     limit = WITHDRAW_LIMIT;
                     break;
-                //case ETransactionType.E_TRANSFER:
-                    //limit = TRANSFER_LIMIT;
-                    //break;
+                case ETransactionType.E_TRANSFER:
+                    //return true;
+                    limit = TRANSFER_LIMIT;
+                    break;
                 default:
                     break;
             }
 
             // Transfer amount is invalid if account balance is less than the transfer amount.
-            //if (bResult && transactionType == ETransactionType.E_TRANSFER && m_BankAccount.Balance < iAmount)
-            //    return false;
+            if (bResult && transactionType == ETransactionType.E_TRANSFER && m_BankAccount.Balance < iAmount)
+                return false;
 
             if (bResult && iAmount >= 0 && iAmount <= limit)
             {
