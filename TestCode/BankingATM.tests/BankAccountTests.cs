@@ -253,6 +253,20 @@ namespace BankingATM.tests
             }
             Assert.AreEqual(600, balance);
         }
+
+        [TestCase("789456", Result = true)]
+        [TestCase("012456", Result = true)]
+        [TestCase("112233", Result = false)]
+        public bool TestAccountExists(string sAccountNumber)
+        {
+            BankAccount bankAccount1 = new BankAccount("789456", "7777", 100);
+            BankAccount bankAccount2 = new BankAccount("012456", "4444", 200);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount1);
+            accountManager.AddBankAccount(bankAccount2);
+            //accountManager.Login("789456", "7777");
+            return accountManager.AccountExists(sAccountNumber);
+        }
          
     } // end BankAccountTests
 }

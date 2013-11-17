@@ -211,5 +211,29 @@ namespace BankingATM
                 return -1;
             }
         }
+
+        public bool AccountExists(string sAccountNumber)
+        {
+            BankAccount targetAccount = m_AccountsDatabase.RetrieveAccount(sAccountNumber);
+            if (targetAccount != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+             
+            /*
+            if (sAccountNumber == "789456")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+             * */
+        }
     }
 }

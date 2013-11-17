@@ -53,5 +53,15 @@ namespace BankingATM
             }
             return null;
         }
+
+        // This method retrieves the account if it exist
+        public BankAccount RetrieveAccount(string accountNumber)
+        {
+            if (m_ht.ContainsKey(accountNumber))
+            {
+                return (BankAccount)m_ht[accountNumber];
+            }
+            return null;
+        }
     }
 }
