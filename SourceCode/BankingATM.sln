@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingATM", "BankingATM\BankingATM.csproj", "{68072C95-BB69-4851-8731-DEE13E3B03FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingATM.tests", "BankingATM.tests\BankingATM.tests.csproj", "{0D9B8DD6-1C12-4BA6-9CC1-CA44F8E395D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingATM.tests", "..\TestCode\BankingATM.tests\BankingATM.tests.csproj", "{0D9B8DD6-1C12-4BA6-9CC1-CA44F8E395D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,6 +7,17 @@ namespace BankingATM
 {
     public class AccountManager
     {
+        // Use for determining transaction limit
+        //public enum ETransactionType
+        //{
+        //    E_DEPOSIT
+            //E_WITHDRAW,
+            //E_TRANSFER
+        //};
+
+        public const int DEPOSIT_LIMIT = 1000;
+        //public const int WITHDRAW_LIMIT = 500;
+        //public const int TRANSFER_LIMIT = 200;
         const int ACCOUNT_NUMBER_LENGTH = 6;
         const int PIN_NUMBER_LENGTH = 4;
 
@@ -117,6 +128,21 @@ namespace BankingATM
             {
                 return false;
             }
+        }
+
+        public bool IsDepositAmountValid(string sAmount, out int iAmount)
+        {
+            iAmount = 0;
+            bool bResult = Int32.TryParse(sAmount, out iAmount);
+
+            if (bResult && iAmount >= 0 && iAmount <= DEPOSIT_LIMIT)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }    
         }
         
         public int Deposit(int iAmount)

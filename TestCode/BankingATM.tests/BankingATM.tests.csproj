@@ -48,7 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BankingATM\BankingATM.csproj">
+    <ProjectReference Include="..\..\SourceCode\BankingATM\BankingATM.csproj">
       <Project>{68072C95-BB69-4851-8731-DEE13E3B03FE}</Project>
       <Name>BankingATM</Name>
     </ProjectReference>

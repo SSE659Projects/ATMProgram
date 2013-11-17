@@ -192,17 +192,33 @@ namespace BankingATM.tests
             Assert.AreEqual(700, balance);
         }
 
-        [TestCase("50", Result = true)]
-        [TestCase("-50", Result = false)]
-        [TestCase("-1", Result = false)]
-        [TestCase("0", Result = true)]
+        //*[TestCase("1500", Result = false)]
+        [TestCase("1001", Result = false)]
+        [TestCase("1000", Result = true)]
+        [TestCase("999", Result = true)]
+        //[TestCase("500", Result = true)]
         [TestCase("1", Result = true)]
-        public bool TestValidTransactionAmountCheckByManager(string sAmount)
+        [TestCase("0", Result = true)]
+        [TestCase("-1", Result = false)]
+        //[TestCase("-500", Result = false)]
+        //[TestCase("abc", Result = false)]   // Garbage Testing
+        //[TestCase("", Result = false)]      // Null Testing
+        public bool TestValidDepositAmountByManager(string sAmount)
         {
             int iAmount = 0;
             AccountManager accountManager = new AccountManager();
-            return accountManager.IsTransactionAmountValid(sAmount, out iAmount);
+            return accountManager.IsDepositAmountValid(sAmount, out iAmount);
         }
+
+        /*
+        [TestCase("500", Result = true)]
+        public bool TestValidWithdrawAmountByManager(string sAmount)
+        {
+            int iAmount = 0;
+            AccountManager accountManager = new AccountManager();
+            return accountManager.IsWithdrawAmountValid(sAmount, out iAmount);
+        }
+         */
 
         [Test]
         public void TestDepositByManager()
