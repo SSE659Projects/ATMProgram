@@ -325,6 +325,19 @@ namespace BankingATM.tests
             Assert.AreEqual(50, bankAccount1.Balance);  // Logged in account balance
             Assert.AreEqual(250, bankAccount2.Balance); // Target account balance
         }
+
+        // Test if account is an administrator
+        [TestCase(true, Result = true)]
+        [TestCase(false, Result = false)]
+        public bool TestIsAdministratorAccountByManager(bool bIsAdministrator)
+        {
+
+            BankAccount bankAccount = new BankAccount("223344", "1234", 0, bIsAdministrator);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount);
+            accountManager.Login("223344", "1234");
+            return accountManager.IsAdministrator();
+        }
          
     } // end BankAccountTests
 }

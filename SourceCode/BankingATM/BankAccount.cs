@@ -10,6 +10,7 @@ namespace BankingATM
         private string m_sAccountNumber;
         private string m_sPinNumber;
         private int m_iBalance;
+        private bool m_bIsAdministrator;    // Indicates if it is an administrator account
 
         public BankAccount()
         {
@@ -18,11 +19,12 @@ namespace BankingATM
             Balance = 0;
         }
         
-        public BankAccount(string accountNumber, string pinNumber = "1111", int balance = 0)
+        public BankAccount(string accountNumber, string pinNumber = "1111", int balance = 0, bool bAdmin = false)
         {
             AccountNumber = accountNumber;
             PinNumber = pinNumber;
             Balance = balance;
+            IsAdministrator = bAdmin;
         }
         
         public void Deposit(int amount)
@@ -59,6 +61,12 @@ namespace BankingATM
         {
             get { return m_sPinNumber; }
             set { m_sPinNumber = value; }
+        }
+
+        public bool IsAdministrator
+        {
+            get { return m_bIsAdministrator; }
+            set { m_bIsAdministrator = value; }
         }
     }
 }
