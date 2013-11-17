@@ -207,18 +207,22 @@ namespace BankingATM.tests
         {
             int iAmount = 0;
             AccountManager accountManager = new AccountManager();
-            return accountManager.IsDepositAmountValid(sAmount, out iAmount);
+            return accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_DEPOSIT, sAmount, out iAmount);
         }
 
-        /*
+
+        [TestCase("501", Result = false)]
         [TestCase("500", Result = true)]
+        [TestCase("499", Result = true)]
+        [TestCase("1", Result = true)]
+        [TestCase("0", Result = true)]
+        [TestCase("-1", Result = false)]
         public bool TestValidWithdrawAmountByManager(string sAmount)
         {
             int iAmount = 0;
             AccountManager accountManager = new AccountManager();
-            return accountManager.IsWithdrawAmountValid(sAmount, out iAmount);
+            return accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_WITHDRAW, sAmount, out iAmount);
         }
-         */
 
         [Test]
         public void TestDepositByManager()

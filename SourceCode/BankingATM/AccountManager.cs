@@ -8,15 +8,15 @@ namespace BankingATM
     public class AccountManager
     {
         // Use for determining transaction limit
-        //public enum ETransactionType
-        //{
-        //    E_DEPOSIT
-            //E_WITHDRAW,
+        public enum ETransactionType
+        {
+            E_DEPOSIT,
+            E_WITHDRAW
             //E_TRANSFER
-        //};
+        };
 
         public const int DEPOSIT_LIMIT = 1000;
-        //public const int WITHDRAW_LIMIT = 500;
+        public const int WITHDRAW_LIMIT = 500;
         //public const int TRANSFER_LIMIT = 200;
         const int ACCOUNT_NUMBER_LENGTH = 6;
         const int PIN_NUMBER_LENGTH = 4;
@@ -115,12 +115,34 @@ namespace BankingATM
             }
         }
 
-        public bool IsTransactionAmountValid(string sAmount, out int iAmount)
+        // This method only returns true if the transaction amount is valid for the transaction type.
+        public bool IsTransactionAmountValid(ETransactionType transactionType, string sAmount, out int iAmount)
         {
+            int limit = 0;
             iAmount = 0;
             bool bResult = Int32.TryParse(sAmount, out iAmount);
 
-            if (bResult && iAmount >= 0)
+            // Set limit based on transaction type
+            switch (transactionType)
+            {
+                case ETransactionType.E_DEPOSIT:
+                    limit = DEPOSIT_LIMIT;
+                    break;
+                case ETransactionType.E_WITHDRAW:
+                    limit = WITHDRAW_LIMIT;
+                    break;
+                //case ETransactionType.E_TRANSFER:
+                    //limit = TRANSFER_LIMIT;
+                    //break;
+                default:
+                    break;
+            }
+
+            // Transfer amount is invalid if account balance is less than the transfer amount.
+            //if (bResult && transactionType == ETransactionType.E_TRANSFER && m_BankAccount.Balance < iAmount)
+            //    return false;
+
+            if (bResult && iAmount >= 0 && iAmount <= limit)
             {
                 return true;
             }
@@ -130,6 +152,7 @@ namespace BankingATM
             }
         }
 
+        /*
         public bool IsDepositAmountValid(string sAmount, out int iAmount)
         {
             iAmount = 0;
@@ -144,6 +167,22 @@ namespace BankingATM
                 return false;
             }    
         }
+
+        public bool IsWithdrawAmountValid(string sAmount, out int iAmount)
+        {
+            iAmount = 0;
+            bool bResult = Int32.TryParse(sAmount, out iAmount);
+
+            if (bResult && iAmount >= 0 && iAmount <= WITHDRAW_LIMIT)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+         * */
         
         public int Deposit(int iAmount)
         {

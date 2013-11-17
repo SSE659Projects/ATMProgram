@@ -100,7 +100,7 @@ namespace BankingATM
                         string sDepositAmount = Console.ReadLine();
                         int iDepositAmount = -1;
 
-                        if (accountManager.IsTransactionAmountValid(sDepositAmount, out iDepositAmount))
+                        if (accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_DEPOSIT, sDepositAmount, out iDepositAmount))
                         {
                             bDepositAmountValid = true;
                             accountManager.Deposit(iDepositAmount);
@@ -121,7 +121,7 @@ namespace BankingATM
                         string sWithdrawAmount = Console.ReadLine();
                         int iWithdrawAmount = -1;
 
-                        if (accountManager.IsTransactionAmountValid(sWithdrawAmount, out iWithdrawAmount))
+                        if (accountManager.IsTransactionAmountValid(AccountManager.ETransactionType.E_WITHDRAW, sWithdrawAmount, out iWithdrawAmount))
                         {
                             bWithdrawAmountValid = true;
                             if (accountManager.Withdraw(iWithdrawAmount) == -1)
