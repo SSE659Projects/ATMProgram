@@ -236,5 +236,23 @@ namespace BankingATM
             }
              * */
         }
+
+        public int Transfer(string sAccountNumber, int iAmount)
+        {
+            if (m_BankAccount.AccountNumber == sAccountNumber)
+                return -1;
+
+            BankAccount targetAccount = m_AccountsDatabase.RetrieveAccount(sAccountNumber);
+            if (targetAccount != null)
+            {
+                targetAccount.Deposit(iAmount);
+                m_BankAccount.Withdraw(iAmount);
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }
