@@ -338,6 +338,22 @@ namespace BankingATM.tests
             accountManager.Login("223344", "1234");
             return accountManager.IsAdministrator();
         }
+
+        [Test]
+        public void TestListAccountNumbersByManager()
+        {
+            BankAccount bankAccount1 = new BankAccount("445566", "5566", 500);
+            BankAccount bankAccount2 = new BankAccount("112233", "1234", 200);
+            BankAccount bankAccount3 = new BankAccount("456789", "1111", 300);
+            AccountManager accountManager = new AccountManager();
+            accountManager.AddBankAccount(bankAccount1);
+            accountManager.AddBankAccount(bankAccount2);
+            accountManager.AddBankAccount(bankAccount3);
+            string sAccountNumbers = "";
+            int iNumberOfAccountNumbers = accountManager.RetrieveAccountNumbers(out sAccountNumbers);
+            Assert.AreEqual("Account Numbers: 112233, 445566, 456789", sAccountNumbers);
+            Assert.AreEqual(3, iNumberOfAccountNumbers);
+        }
          
     } // end BankAccountTests
 }

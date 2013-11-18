@@ -259,5 +259,22 @@ namespace BankingATM
         {
             return m_BankAccount.IsAdministrator;
         }
+
+        public int RetrieveAccountNumbers(out string sAccountNumbers)
+        {
+            return m_AccountsDatabase.RetrieveAccountsForDisplay(out sAccountNumbers);
+        }
+
+        public string GetAccountNumber()
+        {
+            if (m_BankAccount != null)
+            {
+                return m_BankAccount.AccountNumber;
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

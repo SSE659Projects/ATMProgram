@@ -63,5 +63,23 @@ namespace BankingATM
             }
             return null;
         }
+
+        public int RetrieveAccountsForDisplay(out string sAccountNumbers)
+        {
+            int count = 0;
+            sAccountNumbers = "Account Numbers: ";
+
+            foreach (DictionaryEntry entry in m_ht)
+            {
+                if (count != 0)
+                {
+                    sAccountNumbers += ", ";
+                }
+                sAccountNumbers += entry.Key;
+                count++;
+            }
+
+            return count;
+        }
     }
 }
